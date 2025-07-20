@@ -1,38 +1,7 @@
-# SOLID & Design Pattern Practice (Week 1)
+# SOLID & Design Pattern Practice – Week 1
 
-A practice project to apply the **SOLID principles** (focusing on SRP) and basic design patterns using TypeScript.
-
----
-
-## 📋 Table of Contents
-
-- [About the Project](#about-the-project)
-- [Motivation](#motivation)
-- [Project Structure](#project-structure)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Example Code](#example-code)
-- [Testing](#testing)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## 🧩 About the Project
-
-This repository is a learning playground for applying the **Single Responsibility Principle** using TypeScript.  
-Each class handles one responsibility only: validation, persistence, or sending emails.
-
----
-
-## 🎯 Motivation
-
-Improve understanding of OOP & SOLID principles in real-world use cases by:
-
-- Practicing clean code with separation of concerns
-- Using TypeScript's OOP features
-- Preparing for future refactors with other SOLID principles and design patterns
+This repository contains a practice project applying **SOLID principles** and **design patterns** using TypeScript.  
+It demonstrates **Single Responsibility Principle (SRP)** and introduces the **Strategy Pattern** as part of applying **Open/Closed Principle (OCP)**.
 
 ---
 
@@ -69,8 +38,6 @@ test/
 
 ## 🚀 Installation
 
-Make sure you have Node.js (v14+) and npm or yarn installed.
-
 ```bash
 git clone https://github.com/jokovivanco/solid_design_pattern_week_1.git
 cd solid_design_pattern_week_1
@@ -96,14 +63,6 @@ npm install
 
 ---
 
-## 📈 Roadmap
-
-- Week 2: Implement **OCP** + Strategy Pattern
-- Week 3: Practice **LSP** and interfaces
-- Week 4: Explore **DIP** with manual Dependency Injection
-
----
-
 ## 🧪 Testing
 
 Unit tests are located in `/test/UserService.test.ts` and cover:
@@ -120,18 +79,15 @@ npm test
 
 ---
 
-## 🤝 Contributing
+## 🛣 Roadmap
 
-1. Fork this repo
-2. Create a feature or fix branch
-3. Commit and push
-4. Open a Pull Request
-
-For major changes, please open an issue first to discuss.
+- ✅ Week 1: SRP + Strategy Pattern (you are here)
+- 🔜 Week 2: Open/Closed Principle (OCP) deeper usage
+- 🔜 Week 3: Liskov Substitution & Interface Segregation
+- 🔜 Week 4: Dependency Inversion & Project Refactor
 
 ---
 
 ## 📄 License
 
-[MIT](LICENSE)  
-You are free to use, modify, and distribute this code under the terms of the MIT license.
+This project is licensed under the MIT License.
