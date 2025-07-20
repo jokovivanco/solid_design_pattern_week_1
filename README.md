@@ -36,25 +36,34 @@ Improve understanding of OOP & SOLID principles in real-world use cases by:
 
 ---
 
-## 🗂 Project Structure
+## 📁 Project Structure
 
 ```
-/
-├── src/
-│   ├── UserValidator.ts
-│   ├── UserRepository.ts
-│   ├── EmailService.ts
-│   └── UserService.ts
-├── tests/
-│   └── UserService.test.ts
-├── package.json
-├── tsconfig.json
-└── README.md
+src/
+  services/
+    strategies/
+      VerificationEmailStrategy.ts
+      WelcomeEmailStrategy.ts
+    EmailService.ts
+    IEmailStrategy.ts
+    InMemoryUserRepository.ts
+    IUser.ts
+    IUserRepository.ts
+    UserRepository.ts
+    UserService.ts
+    UserValidator.ts
+test/
+  UserService.test.ts
 ```
 
-- `src/`: main source code
-- `tests/`: unit test files
-- `package.json`, `tsconfig.json`: project configurations
+---
+
+## 🎯 Goals
+
+- Practice Single Responsibility Principle (SRP)
+- Apply Strategy Pattern for flexible email behavior
+- Prepare codebase for Open/Closed Principle (OCP)
+- Use interfaces to decouple implementations
 
 ---
 
@@ -70,52 +79,20 @@ npm install
 
 ---
 
-## 🧩 Usage
+## 🧠 Key Concepts Demonstrated
 
-To run the project:
+### ✅ Single Responsibility Principle (SRP)
 
-```bash
-npm run build
-npm start
-```
+- `UserValidator`: Responsible only for validation logic
+- `UserRepository` / `InMemoryUserRepository`: Handle data persistence
+- `EmailService`: Delegates sending emails
+- `UserService`: Coordinates user registration without mixing responsibilities
 
-To run unit tests:
+### 🧩 Strategy Pattern (part of OCP)
 
-```bash
-npm test
-```
-
----
-
-## 🧑‍💻 Example Code
-
-```ts
-const validator = new UserValidator();
-const repo = new UserRepository();
-const email = new EmailService();
-
-const service = new UserService(validator, repo, email);
-
-service.register({
-  name: "Joko",
-  email: "joko@example.com",
-});
-```
-
----
-
-## ✅ Testing
-
-Test scenarios include:
-
-- Input validation (success/failure)
-- Repository and email simulation
-
-Run tests with:
-
-```bash
-npm test
-```
+- `IEmailStrategy`: Interface for email behaviors
+- `WelcomeEmailStrategy`, `VerificationEmailStrategy`: Implement different email-sending behaviors
+- `EmailService`: Uses injected strategy to decouple email logic
 
 ---
 
@@ -124,6 +101,22 @@ npm test
 - Week 2: Implement **OCP** + Strategy Pattern
 - Week 3: Practice **LSP** and interfaces
 - Week 4: Explore **DIP** with manual Dependency Injection
+
+---
+
+## 🧪 Testing
+
+Unit tests are located in `/test/UserService.test.ts` and cover:
+
+- Input validation
+- Email strategy usage
+- Repository interaction
+
+Run tests using:
+
+```bash
+npm test
+```
 
 ---
 
